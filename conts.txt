@@ -1,0 +1,8 @@
+Code Contribution
+Documentation Contribution
+Bugfix
+Issue Triage
+User Interface (UI) or User Experience (UX) Contribution
+Localization or Translation Contribution
+Dependency Updates
+Community Engagement
