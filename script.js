@@ -1,12 +1,14 @@
-let fieldsets = [].slice.call(document.getElementsByTagName('fieldset'));
 let contacts = [].slice.call(document.getElementsByClassName('contact'));
 let popup = document.getElementById('popup');
 let x, y;
 
-fieldsets.forEach(fieldset => {
-    let legend = fieldset.getElementsByTagName('legend')[0];
-    fieldset.style.setProperty('--left0', `${legend.offsetWidth+27}px`);
-    fieldset.style.setProperty('--left1', `${legend.offsetWidth+28}px`);
+window.addEventListener('load', function () {
+    let fieldsets = [].slice.call(document.getElementsByTagName('fieldset'));
+    fieldsets.forEach(fieldset => {
+        let legend = fieldset.getElementsByTagName('legend')[0];
+        fieldset.style.setProperty('--left0', `${legend.offsetWidth+27}px`);
+        fieldset.style.setProperty('--left1', `${legend.offsetWidth+28}px`);
+    })
 })
 
 setInterval(() => {
