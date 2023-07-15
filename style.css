@@ -31,9 +31,9 @@ h1, h2, h3 {
 
 .card {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 0px);
     box-sizing: border-box;
-    padding-top: 100px;
+    padding-top: 150px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +44,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
+    top: 40px;
     z-index: 0;
 }
 
@@ -53,12 +53,13 @@ h1, h2, h3 {
 }
 
 .card h1 {
-    font-size: 70px;
+    font-size: 50px;
     color: var(--text);
     text-align: center;
     width: 100%;
     margin: 0;
     max-width: 700px;
+    z-index: 1;
 }
 
 .card h2 {
@@ -76,23 +77,22 @@ h1, h2, h3 {
 .el {
     max-width: 1000px;
     margin: auto;
-    width: 100%;
     background: var(--accent);
     display: flex;
     box-sizing: border-box;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 0 20px 20px 20px;
+    padding: 0 0 20px 0;
 }
 
 a {
     text-decoration: none;
-    width: 100%;
-    max-width: calc((100% - 20px) / 2);
+    width: calc(50% - 21px);
     margin: auto;
+    padding: 0;
     height: fit-content;
-    min-width: 400px;
     color: var(--text);
+    min-width: 400px;
 }
 
 fieldset {
@@ -102,15 +102,16 @@ fieldset {
     height: fit-content;
     position: relative;
     padding-bottom: 5px;
-    box-shadow: 4px 4px 0 0 var(--text);
+    box-shadow: 0 0 0 2px var(--text);
     font-size: 20px;
     transition: .2s;
 
     --fbg: var(--background);
 }
 
-fieldset.fx:hover {
-    transform: scale(1.05);
+
+fieldset.fx:hover legend {
+    padding: 0 30px;
 }
 
 fieldset > img {
@@ -138,10 +139,21 @@ fieldset .contact img {
     position: relative;
 }
 
+legend {
+    background: var(--background);
+    color: var(--text);
+    font-size: 24px;
+    padding: 0 20px;
+    margin-left: 10px;
+    border-radius: 15px;
+    position: realtive;
+    white-space: nowrap;
+    box-shadow: 0 0 0 2px var(--text);
+    transition: .2s;
+}
+
 #popup {
     position: absolute;
-    top: 0;
-    left: 0;
     background: var(--text);
     border-radius: 20px;
     padding: 5px 10px;
@@ -174,10 +186,27 @@ fieldset footer {
     color: var(--text);
     padding-left: 10px;
     padding-bottom: 5px;
+    font-size: 16px;
+}
+
+fieldset footer .state {
+    background: var(--accent);
+    border-radius: 10px;
+    float: right;
+    padding: 0 10px;
+    box-shadow: 0 0 0 2px var(--text);
 }
 
 span {
-    color: var(--accent)
+    color: var(--accent);
+}
+
+.card span {
+    background: var(--background);
+    border-radius: 20px;
+    padding: 0 12px;
+    box-shadow: 0 0 0 2px var(--accent);
+    margin: 0 4px;
 }
 
 pre {
@@ -185,6 +214,21 @@ pre {
     padding: 10px;
     border-radius: 15px;
     white-space: break-spaces;
+    position: relative;
+    border-radius: 20px 0 20px 20px;
+}
+
+pre::after {
+    content: "bash";
+    top: -20px;
+    right: 0;
+    position: absolute;
+    color: var(--background);
+    background: var(--text);
+    border-radius: 10px 10px 0 0;
+    padding: 2px 10px;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 code {
@@ -206,15 +250,21 @@ md-block p {
 
 md-block h1 {
     border-bottom: 1px solid var(--text);
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 md-block h2 {
     border-bottom: 1px solid var(--text);
+    margin: 10px 0;
+}
+
+md-block h3 {
+    margin: 10px 0;
 }
 
 md-block a {
     color: var(--accent);
+    text-decoration: underline;
 }
 
 md-block {
@@ -223,10 +273,12 @@ md-block {
     background: var(--background);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 4px 4px 0 0 var(--text);
-    width: calc(100% - 44px);
+    box-shadow: 0 0 0 2px var(--text);
+    width: calc(100% - 15px);
+    box-sizing: border-box;
 }
 
+/*
 fieldset::before {
     content: '';
     background: var(--fbg);
@@ -249,17 +301,6 @@ fieldset::after {
     border-top-left-radius: 15px;
 }
 
-legend {
-    background: var(--accent);
-    color: var(--background);
-    font-size: 28px;
-    padding-inline: 10px;
-    margin-left: 15px;
-    border-radius: 15px;
-    position: realtive;
-    white-space: nowrap;
-}
-
 legend::before {
     content: '';
     background: var(--accent);
@@ -279,7 +320,7 @@ legend::after {
     height: 14px;
     position: absolute;
 }
-
+*/
 
 ::-webkit-scrollbar {
     width: 10px;
